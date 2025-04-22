@@ -1,7 +1,10 @@
+
 import sys
 import base64 
 
-if(len(sys.argv) != 3 and sys.argv[2] == "-h" or "--help"):
+len = len(sys.argv)
+
+if((len !=3 ) and (sys.argv[1] == "-h" or "--help")):
     # It is represent the requirement parameter..{-e|-d}
     print("usage : md5  {-e|-d} [-h] \"<string>\"")    
     print(" -e | encode the data")
