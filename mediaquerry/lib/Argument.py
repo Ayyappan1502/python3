@@ -1,8 +1,8 @@
 class Argument:
     def __init__(self,args):
-        self.commands = []
+        self.commands = [] #List here
         self.options = []
-        self.optionValues = {} #set here
+        self.optionValues = {} #Set here
         self.args = args
         
         for arg in self.args:
@@ -20,7 +20,7 @@ class Argument:
                 #if not - it is a command or an argument
                 self.commands.append(arg)
  
-        
+        #simply intersection two value and return them.thus the exection is contribute from hasOption()
     def hasOptions(self,options:list):
         useroptions = set(self.options)
         requiredOptions = set(options)
@@ -29,7 +29,8 @@ class Argument:
     def hasOption(self,option):
         #if option is in options, return True
         return option in self.hasOptions(option)
-    
+
+        #hasOptionValue is value of option.how it is check there , if the option is avaiable in optionValue as true , otherwise false.
     def hasOptionValue(self,option):
         #if option is in options, return value
         if option in self.optionValues:
@@ -37,7 +38,7 @@ class Argument:
         else:
             return False
     
-    
+        #simply intersection two value and return them.thus the exection is contribute from hasCommand()
     def hasCommands(self,command:list):
         #if option is in commands, return True
         usercommands = set(self.commands)
@@ -57,4 +58,7 @@ class Argument:
             return self.optionValues[option]
         else:
             return default
- 
+        
+    def optionHelper(self,options):
+        if(options == "--help" or "-h"):
+            print("Will be soon...")

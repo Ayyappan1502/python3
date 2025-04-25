@@ -11,6 +11,7 @@ if(q.hasOptionValue('--files')):
             if i['@type'] == q.getOptionValue('--type'):
                 d = json.dumps(i, indent=4)
                 if(q.hasOptionValue('--key')):
+                    #if know the key and give for get the value of key
                     print(i[q.getOptionValue('--key')])
                 else:
                     # print("unable to fetch the value , provide keys what you want to fetch")
@@ -25,4 +26,4 @@ if(q.hasOptionValue('--files')):
         print(json.dumps(data, indent=4))
     
 else:
-    print("No Files , Please provide a file using --files=<file>")
+    q.optionHelper(['--help'])
