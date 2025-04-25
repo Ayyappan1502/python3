@@ -1,1 +1,1 @@
-print("git gub is updated successfully:)")
+print("git hub is updated successfully :)")
