@@ -23,10 +23,10 @@ class Argument:
         #simply intersection two value and return them.thus the exection is contribute from hasOption()
     def hasOptions(self,options:list):
         useroptions = set(self.options)
-    
+        # print(self.options)
         requiredOptions = set(options)
-
-        return list(requiredOptions & useroptions)
+        # print(options)
+        return len(list(requiredOptions & useroptions)) == len(options) # simply return the common value
     
     def hasOption(self,option):
     
@@ -65,7 +65,7 @@ class Argument:
     def optionHelper(default=None):
         
         print("------------------------------------------------------------------------------------------")
-        print("[!] : mediaquerry  [--files]=<filename> [--type]=<type> track [--key]=<key>                     |") 
+        print("[!] : mediaquerry  [--files]=<filename> [--type]=<type> track [--key]=<key>               |") 
         print(" ")       
         print("[*] --files=<filename> :It is represent the file name for fethch the information          |")
         print("[*] --type=<type>      :It is represent the type of media to gathering the information    |")
