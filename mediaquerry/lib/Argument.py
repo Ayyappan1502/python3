@@ -4,7 +4,7 @@ class Argument:
         self.options = []
         self.optionValues = {} #Set here
         self.args = args
-        
+   
         for arg in self.args:
             if "-" in  arg:
                 #if (-) it is an option or An option with value
@@ -15,7 +15,7 @@ class Argument:
                     #pair[0] is append on options
                     self.options.append(pair[0])
                 else:
-                    self.options.append(arg)  
+                    self.options.append(arg)
             else:
                 #if not - it is a command or an argument
                 self.commands.append(arg)
@@ -23,12 +23,15 @@ class Argument:
         #simply intersection two value and return them.thus the exection is contribute from hasOption()
     def hasOptions(self,options:list):
         useroptions = set(self.options)
+    
         requiredOptions = set(options)
+
         return list(requiredOptions & useroptions)
     
     def hasOption(self,option):
+    
         #if option is in options, return True
-        return option in self.hasOptions(option)
+        return option in self.hasOptions([option])
 
         #hasOptionValue is value of option.how it is check there , if the option is avaiable in optionValue as true , otherwise false.
     def hasOptionValue(self,option):
@@ -59,6 +62,14 @@ class Argument:
         else:
             return default
         
-    def optionHelper(self,options):
-        if(options == "--help" or "-h"):
-            print("Will be soon...")
+    def optionHelper(default=None):
+        
+        print("------------------------------------------------------------------------------------------")
+        print("[!] : mediaquerry  [--files]=<filename> [--type]=<type> track [--key]=<key>                     |") 
+        print(" ")       
+        print("[*] --files=<filename> :It is represent the file name for fethch the information          |")
+        print("[*] --type=<type>      :It is represent the type of media to gathering the information    |")
+        print("[*] --track            :It is represent the track of media                                |")
+        print("[*] --key              :It is out all the key from media                                  |")    
+        print("[*] --key=<key>        :It is out the value of key from media                             |")
+        
