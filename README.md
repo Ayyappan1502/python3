@@ -1,9 +1,9 @@
 # 👋 Hi, I'm Ayyappan!
 
-I'm a passionate **Fullstack Developer** and an emerging **Bug Bounty Hunter**.
+I'm a passionate **Cyber Security** and an emerging **Bug Bounty Hunter** and I knew **Fullstack development**.
 
 ## 🛠️ Technical Background
-- 💻 Fullstack Development (Java Spring Boot, MERN Stack)
+- 💻 Fullstack Development (Java Spring Boot, MERN Stack) and Devops Engineeer
 - 🌐 Web Security Enthusiast
 - 🛡️ Strong interest in finding vulnerabilities and improving application security
 
