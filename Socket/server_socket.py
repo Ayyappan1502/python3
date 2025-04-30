@@ -54,7 +54,7 @@ def chat_Server():
                         broadcast(server_socket,sockfd, "[{}]  {} ".format(sock.getpeername(),"client has disconnected"))
                         continue
                     except KeyboardInterrupt:
-                        print("\nServerexiting...")
+                        print("Server exiting...")
                         server_socket.close()
                         sys.exit()
 print("Server listening...")

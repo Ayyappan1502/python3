@@ -5,14 +5,15 @@ import select as sel
 
 SOCKET_LIST = [] #list of sockets to be monitored for incoming connections
 REEIVE_BUFF = 1024 #buffer size for receiving data
-host = sys.argv[1]
-port = int(sys.argv[2])
-
-def chat_Client():
-    if len(sys.argv) != 3:
-        print("Usage: python {} <hostname> <port>".format(sys.argv[0]))
+if len(sys.argv) != 3:
+    print("Usage: python {} <hostname> <port>".format(sys.argv[0]))
+    sys.exit()
+else:
     host = sys.argv[1]
     port = int(sys.argv[2])
+
+def chat_Client():
+ 
 
     client_socket = s.socket(s.AF_INET,s.SOCK_STREAM) #inet = ipv4, sock_stream = tcp
     client_socket.settimeout(5) #set a timeout for the socket
@@ -29,7 +30,7 @@ def chat_Client():
         
     while True:
         read_ready,write_ready, in_error = sel.select(SOCKET_LIST, [], []) #create a list of sockets to be monitored for incoming connections
-        # # Use select to wait for incoming messages
+        # Use select to wait for incoming messages
         for sock in read_ready:
             try:
                 if sock == client_socket: # If the socket is the client socket, it means it is a new message from the server
